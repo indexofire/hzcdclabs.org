@@ -1,0 +1,6 @@
+django
+feincms
+django-mptt
+south
+django-debug-toolbar
+
