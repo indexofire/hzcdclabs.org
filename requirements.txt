@@ -4,3 +4,4 @@ django-mptt
 south
 django-debug-toolbar
 psycopg2
+PIL

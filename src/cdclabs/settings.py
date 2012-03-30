@@ -13,10 +13,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hzcdclabs.org',
+        'NAME': 'hzcdclabs',
         'USER': 'hzcdclabs',
         'PASSWORD': '7810018',
-        'HOST': '',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }
