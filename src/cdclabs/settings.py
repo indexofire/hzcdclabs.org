@@ -125,7 +125,7 @@ INSTALLED_APPS = (
     'feincms',
     'feincms.module.page',
     'feincms.module.medialibrary',
-    'django-mptt',
+    'mptt',
     'south',
 )
 
