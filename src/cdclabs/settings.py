@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Django settings for cdclabs project.
+import os
 
+PROJECT_PATH = os.path.
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -97,8 +99,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'cdclabs.urls'
@@ -107,10 +108,7 @@ ROOT_URLCONF = 'cdclabs.urls'
 WSGI_APPLICATION = 'cdclabs.wsgi.application'
 
 TEMPLATE_DIRS = (
-    'templates',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -127,6 +125,8 @@ INSTALLED_APPS = (
     'feincms.module.medialibrary',
     'mptt',
     'south',
+    'feinx',
+    'feinx.bootloader',
 )
 
 # A sample logging configuration. The only tangible logging
