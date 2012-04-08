@@ -12,14 +12,23 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'hzcdclabs',
         'USER': 'hzcdclabs',
-        'PASSWORD': '7810018',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '',
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'test.db',
     }
 }
 
@@ -30,11 +39,15 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-cn'
+LANGUAGES     = (
+    ('zh-cn', 'Simplified Chinese'),
+    ('en-us', 'English'),
+)
 
 SITE_ID = 1
 
@@ -47,7 +60,7 @@ USE_I18N = True
 USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -100,6 +113,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+INTERNAL_IPS = (
+    '127.0.0.1',
 )
 
 ROOT_URLCONF = 'cdclabs.urls'
@@ -125,8 +143,10 @@ INSTALLED_APPS = (
     'feincms.module.medialibrary',
     'mptt',
     'south',
+    'debug_toolbar',
     'feinx',
     'feinx.apps.bootloader',
+    'feinx.apps.forum',
     'feinx.contrib.account',
 )
 
