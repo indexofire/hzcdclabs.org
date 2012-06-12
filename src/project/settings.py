@@ -120,10 +120,10 @@ INTERNAL_IPS = (
     '127.0.0.1',
 )
 
-ROOT_URLCONF = 'cdclabs.urls'
+ROOT_URLCONF = 'project.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'cdclabs.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
