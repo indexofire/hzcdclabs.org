@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Django settings for cdclabs project.
 import os
 
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))

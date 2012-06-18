@@ -6,24 +6,22 @@ from feincms.module.page.sitemap import PageSitemap
 
 admin.autodiscover()
 
-# create sitemap
-sitemaps = {
-    'page': PageSitemap,
-}
+sitemaps = {'page': PageSitemap,}
 
+# admin and admin docs
 urlpatterns = patterns('',
-    # url(r'^$', 'cdclabs.views.home', name='home'),
-    # url(r'^cdclabs/', include('cdclabs.foo.urls')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
+# create sitemap
 urlpatterns += patterns('',
-    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': sitemaps}
     ),
 )
 
+# django static serve in DEBUG mode
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^%s/(?P<path>.*)$' % settings.MEDIA_URL.strip('/'),
@@ -31,7 +29,7 @@ if settings.DEBUG:
         ),
     )
 
-# 
+# default url route
 urlpatterns += patterns('',
-    url(r'', include('feincms.urls')),
+    url(r'^', include('feincms.urls')),
 )
