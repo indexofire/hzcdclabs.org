@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from cdclabs.settings import *
+from .settings import *
 
 DATABASES = {
     'default': {
