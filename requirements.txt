@@ -1,7 +1,9 @@
-django
-feincms
-django-mptt
+django==1.4
+feincms==1.6.1
+django-mptt==0.5.2
 south
 django-debug-toolbar
 psycopg2
-PIL
+PIL==1.1.7
+feedparser
+lxml
