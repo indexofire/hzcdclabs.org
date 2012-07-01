@@ -142,9 +142,9 @@ INSTALLED_APPS = (
     'south',
     'debug_toolbar',
     'feinx',
+    'feinx.contrib.account',
     'feinx.apps.bootloader',
     'feinx.apps.forum',
-    'feinx.contrib.account',
     'feinx.apps.article',
 )
 
@@ -176,3 +176,5 @@ LOGGING = {
         },
     }
 }
+
+CUSTOM_USER_MODEL = 'feinx.contrib.account.Profile'
