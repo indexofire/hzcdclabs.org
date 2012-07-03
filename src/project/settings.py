@@ -31,6 +31,8 @@ DATABASES = {
     }
 }
 
+THEME = 'default'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -82,7 +84,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'assets'),
+    os.path.join(PROJECT_PATH, 'assets/%s' % THEME),
 )
 
 # List of finder classes that know how to find static files in
@@ -178,3 +180,7 @@ LOGGING = {
 }
 
 CUSTOM_USER_MODEL = 'feinx.contrib.account.Profile'
+
+FEINCMS_RICHTEXT_INIT_CONTEXT = {
+    'TINYMCE_JS_URL': '/static/libs/tiny_mce/tiny_mce.js',
+}
