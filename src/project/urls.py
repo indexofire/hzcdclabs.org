@@ -28,7 +28,7 @@ urlpatterns += patterns('',
     url(r'^', include('feincms.urls')),
 )
 
-"""
+
 # django static serve in DEBUG mode
 if settings.DEBUG:
     urlpatterns += patterns('',
@@ -43,6 +43,7 @@ if settings.DEBUG:
         url(r'^%s/(?P<path>.*)$' % settings.STATIC_URL.strip('/'), 'serve')
     )
 
-urlpatterns += staticfiles_urlpatterns()
+#urlpatterns += staticfiles_urlpatterns()
 
 
+"""
