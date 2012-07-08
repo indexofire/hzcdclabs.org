@@ -31,5 +31,5 @@ if settings.DEBUG:
 
 # default url route
 urlpatterns += patterns('',
-    url(r'^', include('feincms.urls')),
+    url(r'', include('feincms.urls')),
 )

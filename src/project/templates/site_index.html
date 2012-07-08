@@ -12,7 +12,7 @@ $(window).load(function() {
     });
 });
 </script>
-{% endblock %}
+{% endblock extra_head %}
 
 {% block content %}
 <!-- flexslider start -->
@@ -58,10 +58,9 @@ $(window).load(function() {
 </div>
 </div>
 <!-- intro end -->
+{% endblock content %}
 
-
-
-
+{% block footer %}
 <!-- foot start -->
 <footer id="foot">
   <div class="footer">
@@ -102,4 +101,4 @@ $(window).load(function() {
   </div>
 </footer>
 <!-- foot end -->
-{% endblock %}
+{% endblock footer %}

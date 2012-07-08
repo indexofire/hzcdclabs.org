@@ -3,6 +3,8 @@
 
 {% block content %}
 <div class="container">
-  {% feincms_render_region feincms_page "main" request %}
+<div class="row">
+  <div class="pad">{% feincms_render_region feincms_page "main" request %}</div>
+</div>
 </div>
 {% endblock content %}

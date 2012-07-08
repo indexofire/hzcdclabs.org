@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Django settings for cdclabs project.
 import os
 
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -30,8 +31,6 @@ DATABASES = {
         'NAME': 'test.db',
     }
 }
-
-THEME = 'default'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -84,7 +83,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'assets/%s' % THEME),
+    os.path.join(PROJECT_PATH, 'assets/default/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -113,6 +112,18 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+	"django.contrib.auth.context_processors.auth",
+	"django.core.context_processors.debug",
+	"django.core.context_processors.i18n",
+	"django.core.context_processors.media",
+	"django.core.context_processors.static",
+	"django.core.context_processors.tz",
+	"django.core.context_processors.request",
+	"django.contrib.messages.context_processors.messages",
 )
 
 INTERNAL_IPS = (
@@ -144,10 +155,9 @@ INSTALLED_APPS = (
     'south',
     'debug_toolbar',
     'feinx',
-    'feinx.contrib.account',
     'feinx.apps.bootloader',
     'feinx.apps.forum',
-    'feinx.apps.article',
+    'feinx.contrib.account',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -179,8 +189,6 @@ LOGGING = {
     }
 }
 
-CUSTOM_USER_MODEL = 'feinx.contrib.account.Profile'
-
 FEINCMS_RICHTEXT_INIT_CONTEXT = {
-    'TINYMCE_JS_URL': '/static/libs/tiny_mce/tiny_mce.js',
+	'TINYMCE_JS_URL': '',
 }
