@@ -2,9 +2,7 @@
 {% load applicationcontent_tags feincms_tags feincms_page_tags %}
 
 {% block content %}
-<div class="container">
-<div class="row">
-  <div class="pad">{% feincms_render_region feincms_page 'application' request %}</div>
-</div>
+<div class="container-fluid">
+{% feincms_render_region feincms_page 'application' request %}
 </div>
 {% endblock content %}
